@@ -6,8 +6,6 @@ import numpy as np
 import zipfile
 
 
-
-
 app = FastAPI(title='Proyecto Individual ',
             description='Victor Vargas',
             version='1.0.1')
@@ -32,8 +30,39 @@ async def about():
 # Cargar los datasets
 # ----------------------------------------------------
 # Leer el archivo CSV
-df = pd.read_csv('03 - DEF\Funcio.csv')
-ml=pd.read_csv('04 - ML\Machine.csv')
+# Cargar los datasets
+# ----------------------------------------------------
+df = None
+ml = None
+
+
+@app.on_event('startup')
+async def startup():
+    global df , ml
+
+    
+    zip_file = 'Henry_1.zip'
+    
+    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+        zip_ref.extractall('../data/')  # Descomprime los archivos en el directorio '../data/'
+    
+    df = pd.read_csv('../data/Funcio.csv')
+    ml = pd.read_csv('../data/Machine.csv')
+
+
+def extract_data_from_zip():
+    """
+    Extrae y carga los conjuntos de datos desde un archivo comprimido.
+    
+    Returns:
+        datasets_df (DataFrame): Dataframe que contiene los datos finales.
+        crew_df (DataFrame): Dataframe que contiene los datos de equipo de producción.
+        cast_df (DataFrame): Dataframe que contiene los datos de reparto de películas.
+        movie_genres_df (DataFrame): Dataframe que contiene los géneros de películas.
+    """
+    return df, ml
+#_______________________________________
+
 
 
 # Definir la ruta de FastAPI
