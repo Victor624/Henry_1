@@ -254,9 +254,13 @@ def peliculas_recomendadas(pelicula: str):
     if pelicula in Pelis_recom.tolist():
         Pelis_recom = Pelis_recom[Pelis_recom != pelicula]
         
+    Lista=pd.DataFrame(Pelis_recom)
+    Lista=Lista[0:5]
+    
+        
     
  
-    return Pelis_recom(pelicula)
+    return {"directores": Lista.to_dict(orient="records")} 
 
 
 
