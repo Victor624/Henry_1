@@ -21,26 +21,6 @@ df = pd.read_csv('03 - DEF\Funcio.csv')
 ml=pd.read_csv('04 - ML\Machine.csv')
 
 
-@app.get("/", response_class=HTMLResponse, tags=['Index'])
-async def read_index_html():
-    """
-    Ruta para el archivo index.html.
-    """
-    with open("index.html") as f:
-        return f.read()
-# ---------------------------------------------------
-@app.get('/about/', tags=['Credits'])
-async def about():
-    """
-    GET /about/
-
-    Retorna un diccionario con información sobre el Primer Proyecto individual:  partime 01 de Data Science.
-    """
-    return {'message': 'Primer Proyecto individual:  partime 01 de Data Science'}
-
-# ---------------------------------------------------
-
-
 
 
 # Definir la ruta de FastAPI
