@@ -12,7 +12,22 @@ app = FastAPI(title='Proyecto Individual ',
             description='Victor Vargas',
             version='1.0.1')
 # -------------------------------
+@app.get("/", response_class=HTMLResponse, tags=['Index'])
+async def read_index_html():
+    """
+    Ruta para el archivo index.html.
+    """
+    with open("index.html") as f:
+        return f.read()
+# ---------------------------------------------------
+@app.get('/about/', tags=['Credits'])
+async def about():
+    """
+    GET /about/
 
+    Retorna un diccionario con información sobre el Primer Proyecto individual:  partime 01 de Data Science.
+    """
+    return {'message': 'Primer Proyecto individual:  partime 01 de Data Science'}
 
 # Cargar los datasets
 # ----------------------------------------------------
@@ -20,7 +35,12 @@ app = FastAPI(title='Proyecto Individual ',
 df = pd.read_csv('03 - DEF\Funcio.csv')
 ml=pd.read_csv('04 - ML\Machine.csv')
 
+task_id_global = None
 
+@app.get('/predict')
+async def predict(task_id:int,solute,solvent):
+    global task_id_global
+    task_id_global = task_id
 
 
 # Definir la ruta de FastAPI
