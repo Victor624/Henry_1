@@ -16,7 +16,7 @@ email-validator==2.0.0.post2
 et-xmlfile==1.1.0
 executing==1.2.0
 fastapi==0.101.0
-fastparquet==2023.7.0
+fastparquet==0.8.1
 fonttools==4.42.0
 fsspec==2023.6.0
 h11==0.14.0
