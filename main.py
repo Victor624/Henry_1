@@ -204,6 +204,10 @@ def directores(x: str):
     
     Lista = pd.DataFrame(titl)
     Lista = Lista.sort_values("Return", ascending=False)
+    Lista=Lista.reset_index()
+    Lista=Lista[["title","release_date","revenue","Return"]]
+    Lista=Lista[0:5]
+
    
     
     return {"directores": Lista.to_dict(orient="records")}  
@@ -249,6 +253,8 @@ def peliculas_recomendadas(pelicula: str):
     # Si la película de consulta está en la lista de recomendaciones, la eliminamos
     if pelicula in Pelis_recom.tolist():
         Pelis_recom = Pelis_recom[Pelis_recom != pelicula]
+        
+    
  
     return Pelis_recom(pelicula)
 
