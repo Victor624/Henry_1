@@ -7,7 +7,7 @@ import zipfile
 
 
 app = FastAPI(title='Proyecto Individual ',
-            description='Victor Vargas',
+            description='Autor:  Victor Vargas',
             version='1.0.1')
 # -------------------------------
 @app.get("/", response_class=HTMLResponse, tags=['Index'])
@@ -217,9 +217,6 @@ def directores(x: str):
 @app.get("/peliculas_recomendadas/{pelicula}")
 def peliculas_recomendadas(pelicula: str):
 
-
-
-
     # archivo CSV con los datos
     ML_DF1 = ml
 
@@ -256,10 +253,8 @@ def peliculas_recomendadas(pelicula: str):
         
     Lista=pd.DataFrame(Pelis_recom)
     Lista=Lista[0:5]
-    
-        
-    
- 
+
+
     return {"directores": Lista.to_dict(orient="records")} 
 
 
