@@ -17,10 +17,8 @@ app = FastAPI(title='Proyecto Individual ',
 # Cargar los datasets
 # ----------------------------------------------------
 # Leer el archivo CSV
-df = pd.read_csv('DEF\Funcio.csv')
-ml=pd.read_csv('ML\Machine.csv')
-
-
+df = pd.read_csv('03 - DEF\Funcio.csv')
+ml=pd.read_csv('04 - ML\Machine.csv')
 
 
 @app.get("/", response_class=HTMLResponse, tags=['Index'])
