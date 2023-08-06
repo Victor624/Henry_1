@@ -35,13 +35,6 @@ async def about():
 df = pd.read_csv('03 - DEF\Funcio.csv')
 ml=pd.read_csv('04 - ML\Machine.csv')
 
-task_id_global = None
-
-@app.get('/predict')
-async def predict(task_id:int,solute,solvent):
-    global task_id_global
-    task_id_global = task_id
-
 
 # Definir la ruta de FastAPI
 @app.get("/idioma/{x}")
