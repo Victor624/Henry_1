@@ -78,7 +78,8 @@ def peliculas_duracion(x: str):
     
     Esta Funcion devuelve la fecha que fue estrenada y la cantidad de minutos que tiene la pelicula:\n
     estos son algunos de los datos que pueden investigar:\n
-	'Toy Story', 'Jumanji', 'Grumpier Old Men','Century of Birthing', 'Queerama'\n
+	'Toy Story', 'Jumanji', 'Grumpier Old Men','Century of Birthing'\n
+    
 
     """
     
