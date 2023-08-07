@@ -9,6 +9,8 @@ import zipfile
 app = FastAPI(title='Proyecto Individual ',
             description='Autor:  Victor Vargas',
             version='1.0.1')
+
+
 # -------------------------------
 
 # Cargar los datasets
@@ -74,9 +76,9 @@ def peliculas_duracion(x: str):
 
     """
     
-        Esta Funcion devuelve la fecha que fue estrenada y la cantidad de minutos que tiene la pelicula:\n
-        estos son algunos de los datos que pueden investigar:\n
-	    'Toy Story', 'Jumanji', 'Grumpier Old Men',  'Caged Heat 3000','Century of Birthing', 'Queerama'\n
+    Esta Funcion devuelve la fecha que fue estrenada y la cantidad de minutos que tiene la pelicula:\n
+    estos son algunos de los datos que pueden investigar:\n
+	'Toy Story', 'Jumanji', 'Grumpier Old Men','Century of Birthing', 'Queerama'\n
 
     """
     
