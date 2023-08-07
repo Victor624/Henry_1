@@ -254,27 +254,7 @@ def peliculas_recomendadas(pelicula: str):
     Lista=pd.DataFrame(Pelis_recom)
     Lista=Lista[0:5]
 
-
     return {"directores": Lista.to_dict(orient="records")} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
