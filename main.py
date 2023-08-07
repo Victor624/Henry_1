@@ -10,22 +10,6 @@ app = FastAPI(title='Proyecto Individual ',
             description='Autor:  Victor Vargas',
             version='1.0.1')
 # -------------------------------
-@app.get("/", response_class=HTMLResponse, tags=['Index'])
-async def read_index_html():
-    """
-    Ruta para el archivo index.html.
-    """
-    with open("index.html") as f:
-        return f.read()
-# ---------------------------------------------------
-@app.get('/about/', tags=['Credits'])
-async def about():
-    """
-    GET /about/
-
-    Retorna un diccionario con información sobre el Primer Proyecto individual:  partime 01 de Data Science.
-    """
-    return {'message': 'Primer Proyecto individual:  partime 01 de Data Science'}
 
 # Cargar los datasets
 # ----------------------------------------------------
@@ -51,33 +35,25 @@ async def startup():
 
 
 def extract_data_from_zip():
-    """
-    Extrae y carga los conjuntos de datos desde un archivo comprimido.
-    
-    Returns:
-        datasets_df (DataFrame): Dataframe que contiene los datos finales.
-        crew_df (DataFrame): Dataframe que contiene los datos de equipo de producción.
-        cast_df (DataFrame): Dataframe que contiene los datos de reparto de películas.
-        movie_genres_df (DataFrame): Dataframe que contiene los géneros de películas.
-    """
+
     return df, ml
 #_______________________________________
 
 
 
 # Definir la ruta de FastAPI
-@app.get("/idioma/{x}")
+@app.get("/idioma/{x}",tags=["Idioma"])
 def contar_peliculas(x: str):
     
     """
-    Esta Funcion devuelve el idioma Idioma solicitado y la cantidad de peliculas hechas con ese idioma:
-    estos son lops datos que puede investigar:
-	en
+    
+        Esta Funcion devuelve el idioma Idioma solicitado y la cantidad de peliculas hechas con ese idioma:\n
+        estos son algunos de los datos que pueden investigar:\n
+	    'en', 'fr', 'zh', 'it', 'fa', 'nl', 'de', 'cn', 'ar', 'es', 'ru'\n
 
-
-    """
      
-   
+    """
+        
     # Filtrar las películas según el idioma especificado en la URL
     peliculas = df.loc[df['original_language'] == x]
     
@@ -93,11 +69,16 @@ def contar_peliculas(x: str):
 
 
 
-@app.get("/peliculas_duracion/{x}")
+@app.get("/peliculas_duracion/{x}",tags=["Estreno y Duracion de la Pelicula"])
 def peliculas_duracion(x: str):
 
+    """
+    
+        Esta Funcion devuelve la fecha que fue estrenada y la cantidad de minutos que tiene la pelicula:\n
+        estos son algunos de los datos que pueden investigar:\n
+	    'Toy Story', 'Jumanji', 'Grumpier Old Men',  'Caged Heat 3000','Century of Birthing', 'Queerama'\n
 
-
+    """
     
     x = x.lower().title()
     Pelicula = df['title']
@@ -111,13 +92,25 @@ def peliculas_duracion(x: str):
     Peli = df[["release_year", "runtime"]]
     Peli = pd.DataFrame(Peli)
     Peli = Peli.loc[Cantidad]
-    resultado = f"La película <{x}> fue estrenada en: {Peli[0]} y tiene una duración de {Peli[1]} minutos"
+    resultado = f"La película '{x}' fue estrenada en: {Peli[0]} y tiene una duración de {Peli[1]} minutos"
     
     return {"resultado": resultado}
 
 
-@app.get("/franquicias/{x}")
+@app.get("/franquicias/{x}",tags=["Franquicias, Ganancias y Promedio"])
+
 def franquicias(x: str):
+        
+    """
+    Esta Funcion devuelve la cantidad de peliculas que hizo, la ganancia total que tuvo y el promedio total sobre todas las peliculas:\n
+    estos son algunos de los datos que pueden investigar:\n
+    Pixar Animation Studios',\n
+    'TriStar Pictures Teitler Film Interscope Communications',\n
+    'Warner Bros. Lancaster Gate',\n
+    'Neptune Salad Entertainment Pirie Productions',\n
+    '20th Century Fox ',\n
+    'Sine Olivia'\n
+    """
     Franqui = df['name_prod']
     Cantidad = 0
     Cant_Peli = 0
@@ -146,8 +139,18 @@ def franquicias(x: str):
     return {"resultado": result}
 
 
-@app.get("/peliculas/{x}")
+@app.get("/peliculas/{x}",tags=["Cantidad de Peliculas por Pais"])
 def peliculas_pais(x: str):
+
+    """
+    Esta Funcion devuelve la cantidad de peliculas que se hizo en el pais solicitado:\n
+    estos son algunos de los datos que pueden investigar:\n
+    'United States of America', 'Germany United States of America'\n
+    'United Kingdom United States of America'\n
+    'Poland Czech Republic Slovakia', 'Cuba Germany Spain'\n
+    'Egypt Italy United States of America'
+    """    
+    
     pais = df['name_Count']
     Lugar = 0
     Cant_Peli = 0
@@ -168,8 +171,19 @@ def peliculas_pais(x: str):
 
 
 
-@app.get("/productoras/{x}")
+@app.get("/productoras/{x}",tags=["Cantidad de Peliculas y Ganancia Total"],)
 def productoras_exitosas(x: str):
+    """
+     Esta Funcion devuelve la cantidad de peliculas que se hizo la productora solicitado junto con la ganancia total:\n
+     estos son algunos de los datos que pueden investigar:\n
+    'Pixar Animation Studios',\n
+       'TriStar Pictures Teitler Film Interscope Communications',\n
+       'Warner Bros. Lancaster Gate',\n 
+       'Neptune Salad Entertainment Pirie Productions',\n
+       '20th Century Fox',
+       'Sine Olivia
+    """  
+     
     Franqui = df['name_prod']
     Cantidad = 0
     Cant_Peli = 0
@@ -199,8 +213,19 @@ def productoras_exitosas(x: str):
     return {"resultado": result}
 
 
-@app.get("/directores/{x}")
+@app.get("/directores/{x}",tags=["Las Peliculas del Director y ordenado por el Retorno"])
 def directores(x: str):
+    
+    """
+     Esta Funcion devuelve las peliculas hizo el Director en orden de las que mas Ganancia dejo:\n
+     estos son algunos de los datos que pueden investigar:\n
+    'John Lasseter'\n
+    'Joe Johnston'\n
+    'Howard Deutch'\n
+    'Forest Whitaker'\n
+    'Charles Shyer\n
+
+    """  
     Direct = df['Director']
     titl = []
     posi = -1
@@ -228,8 +253,15 @@ def directores(x: str):
 
 
 
-@app.get("/peliculas_recomendadas/{pelicula}")
+@app.get("/peliculas_recomendadas/{pelicula}",tags=["Machine Learning Recomendacion"])
 def peliculas_recomendadas(pelicula: str):
+    """
+     Esta Funcion devuelve las 5 recomendaciones similares a la pelicula que seleccionaste p\n
+     estos son algunos de los datos que pueden investigar:\n
+    'Toy Story', 'Jumanji', 'Grumpier Old Men',  'Caged Heat 3000','Century of Birthing', 'Queerama'\n
+
+    """ 
+    
 
     # archivo CSV con los datos
     ML_DF1 = ml
