@@ -68,6 +68,16 @@ def extract_data_from_zip():
 # Definir la ruta de FastAPI
 @app.get("/idioma/{x}")
 def contar_peliculas(x: str):
+    
+    """
+    Esta Funcion devuelve el idioma Idioma solicitado y la cantidad de peliculas hechas con ese idioma:
+    estos son lops datos que puede investigar:
+	en
+
+
+    """
+     
+   
     # Filtrar las películas según el idioma especificado en la URL
     peliculas = df.loc[df['original_language'] == x]
     
@@ -85,6 +95,10 @@ def contar_peliculas(x: str):
 
 @app.get("/peliculas_duracion/{x}")
 def peliculas_duracion(x: str):
+
+
+
+    
     x = x.lower().title()
     Pelicula = df['title']
     Cantidad = -1
