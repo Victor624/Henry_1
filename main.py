@@ -107,7 +107,6 @@ def franquicias(x: str):
     """
     Esta Funcion devuelve la cantidad de peliculas que hizo, la ganancia total que tuvo y el promedio total sobre todas las peliculas:\n
     estos son algunos de los datos que pueden investigar:\n
-    Pixar Animation Studios',\n
     Asterix \n
     The Cremaster \n
     Fright Night \n
