@@ -23,37 +23,26 @@ Debes empezar desde 0, haciendo un trabajo rápido de **`Data Engineer`** y tene
 # Diccionario de Carpetas y Archivos En Repositorio
 
 
-    ⏩"data": "En esta carpeta se guardan los archivos descomprimidos del archivo data_1.0.2",
+    ⏩"00 - DATA": "En esta carpeta se guardan los archivos comprimidos de los archivos de Movies_Dataset.csv y 
+                    credits.csv" con los cuales vamos a trabajar
 
-    ⏩"EDA": "Esta carpeta contiene un archivo en formato .ipynb que se utilizó para realizar el análisis
-	exploratorio de los datos.",
-
-    ⏩"EDA/data_a_explorar": "Contiene el archivo con el que se realizó el análisis exploratorio de los datos.",
-
-    ⏩"ETL": "Contiene 9 carpetas que incluyen procesos de transformación y limpieza de datos, tratamiento de
+    ⏩"01 - ETL": ""Contiene 5 carpetas que incluyen procesos de transformación y limpieza de datos, tratamiento de
 	columnas anidadas, sustitución de valores nulos, revisión de tipos de datos y códigos para eliminar
-	valores repetidos o con formatos distintos a los que corresponden en su columna.",
+	valores repetidos o con formatos distintos a los que corresponden en su columna:
+                    01 - Fraccionado DataFrame
+                    02 - Desanidado  de Columnas
+                    03 - Armado de archivo completo
+                    04 - Tratamiento de Datos Nulos
+                    04 - Dataframe para operaciones
+                    05 - Daraframe data para Funciones",
 
-    ⏩"ETL/1-Arquitectura_Nuevos_DataSets": "Contiene un archivo en formato .ipynb en el que se realizó la
-	separación del dataset original y se crearon nuevos datasets. Para más detalles, revisar el
-	diccionario de datos.",
+    ⏩"02 - EDA ": "Contiene el archivo con el que se realizó el análisis exploratorio de los datos.",
 
-    ⏩"ETL/6-DataSets_Final_movies_dataset": "Contiene un archivo en formato .zip en el que se encuentran
-	comprimidos los archivos limpios.",
+    ⏩"03 - DEF": "Genere las funciones necesarias para que nos requirieron en trabajo practico.",
 
-    ⏩"ETL/7-Datasets_original": "Contiene los archivos originales comprimidos en un archivo .zip.",
+    ⏩"04 - ML": "Archivo de Machine Learning"
 
-    ⏩"ETL/9-Proceso_ETL_credits": "Contiene dos archivos en formato .ipynb donde se realiza el proceso
-	ETL del archivo credits.csv.",
-
-    ⏩"Machine_Learning/Pruebas": "Contiene un archivo en formato .ipynb en el que se desarrolló la función
-	para crear un modelo de aprendizaje utilizando el método 'vecinos más cercanos'.",
-
-    ⏩"Scripts": "Contiene archivos relacionados con el entorno virtual"
-
-    ⏩"data_1.0.2.zip": "Archivo comprimido en formato .zip que contiene la data limpia.",
-
-    ⏩"index.html": "Archivo con el código en HTML, JavaScript y CSS que se utilizó para crear el Frontend.",
+    ⏩"Henry_1.zip": "Archivo comprimido en formato .zip que contiene la data limpia.",
 
     ⏩"main.py": "Archivo que contiene todo el código de la API desarrollada con FastAPI.",
 

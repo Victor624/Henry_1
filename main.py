@@ -108,11 +108,10 @@ def franquicias(x: str):
     Esta Funcion devuelve la cantidad de peliculas que hizo, la ganancia total que tuvo y el promedio total sobre todas las peliculas:\n
     estos son algunos de los datos que pueden investigar:\n
     Pixar Animation Studios',\n
-    'TriStar Pictures Teitler Film Interscope Communications',\n
-    'Warner Bros. Lancaster Gate',\n
-    'Neptune Salad Entertainment Pirie Productions',\n
-    '20th Century Fox ',\n
-    'Sine Olivia'\n
+    "  'Asterix and Obelix Collection'",
+    "  'The Cremaster Cycle'",
+    "  'Fright Night (Reboot) Collection'", "  'Tetsuo Collection'",
+    "  'Superman (DC Universe Animated) Collection'"
     """
     Franqui = df['name_prod']
     Cantidad = 0
@@ -135,9 +134,10 @@ def franquicias(x: str):
         Ganancias = Ganancias["Return"].replace(np.inf, 0)
         Ganancias = pd.DataFrame(Ganancias)
         suma = Ganancias["Return"].sum().round(2)
-        result = f"La productora hizo {Cant_Peli} películas con una ganancia total de {suma.round(2)} y un promedio de {(suma/Cant_Peli).round(2)}"
+        result="La franquicia hizo ",Cant_Peli,"con una ganancia total de",suma.round(2),"y un promedio de",(suma/Cant_Peli).round(2)
     else:
-        result = "No hay una productora con ese Nombre"
+        
+        result="No hay una frnaquicia con ese Nombre"
         
     return {"resultado": result}
 
