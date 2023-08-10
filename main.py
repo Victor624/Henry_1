@@ -113,7 +113,7 @@ def franquicias(x: str):
     "  'Fright Night (Reboot) Collection'", "  'Tetsuo Collection'",
     "  'Superman (DC Universe Animated) Collection'"
     """
-    Franqui = df['name_prod']
+    Franqui = df['name_belong']
     Cantidad = 0
     Cant_Peli = 0
     Ganancias = []
