@@ -108,10 +108,11 @@ def franquicias(x: str):
     Esta Funcion devuelve la cantidad de peliculas que hizo, la ganancia total que tuvo y el promedio total sobre todas las peliculas:\n
     estos son algunos de los datos que pueden investigar:\n
     Pixar Animation Studios',\n
-    "  'Asterix and Obelix Collection'",
-    "  'The Cremaster Cycle'",
-    "  'Fright Night (Reboot) Collection'", "  'Tetsuo Collection'",
-    "  'Superman (DC Universe Animated) Collection'"
+    Asterix and Obelix Collection
+    The Cremaster Cycle
+    Fright Night (Reboot) Collection
+    Tetsuo Collection
+    Superman (DC Universe Animated) Collection
     """
     Franqui = df['name_belong']
     Cantidad = 0
