@@ -78,9 +78,11 @@ def peliculas_duracion(x: str):
     
     Esta Funcion devuelve la fecha que fue estrenada y la cantidad de minutos que tiene la pelicula:\n
     estos son algunos de los datos que pueden investigar:\n
-	'Toy Story', 'Jumanji', 'Grumpier Old Men','Century of Birthing'\n
-    
-
+    Bar Spor\n
+    The Demolitionist\n
+    Fear Lives Here\n
+    Cremaster 2\n
+	
     """
     
     x = x.lower().title()
@@ -91,7 +93,7 @@ def peliculas_duracion(x: str):
         if i == x:
             break
         else:
-            Cantidad += 1
+            resultado=f"La película no se encuentra"
     Peli = df[["release_year", "runtime"]]
     Peli = pd.DataFrame(Peli)
     Peli = Peli.loc[Cantidad]

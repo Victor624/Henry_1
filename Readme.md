@@ -250,6 +250,8 @@ Cada línea del archivo especifica el nombre de una librería seguido de `==` y 
 
 Una vez que el archivo `requirements.txt` está correctamente configurado, Render utilizará esta información para instalar automáticamente las librerías necesarias durante el proceso de despliegue de la API. Esto asegura que todas las dependencias estén disponibles en el entorno de ejecución de la aplicación en Render.
 
+<a href="https://trabajo-vargas-victor.onrender.com/docs#" target="_blank">Mi Aplicacion</a>
+
 <a href="https://trabajo-vargas-victor.onrender.com/" target="_blank">Mi Aplicacion</a>
 
 
