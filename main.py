@@ -238,20 +238,19 @@ def directores(x: str):
     for i in Direct:
         i = str(i)
         posi += 1
-        if x in i:           
+        if x == i:           
             title = df[["title", "release_date", "revenue", "Return"]]
             title = pd.DataFrame(title)
             title = title.loc[posi]
             titl.append(title)
         else:
             pass
-    
+        
     Lista = pd.DataFrame(titl)
     Lista = Lista.sort_values("Return", ascending=False)
     Lista=Lista.reset_index()
     Lista=Lista[["title","release_date","revenue","Return"]]
     Lista=Lista[0:5]
-
 
     return {"directores": Lista.to_dict(orient="records")}  
 
