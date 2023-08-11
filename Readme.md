@@ -64,7 +64,13 @@ En resumen, este proyecto consegui  la autonomía, la organización, la resoluci
 ## Exploración y Limpieza de Datos
 
 
-La exploracion de datos tuve que desarrolar un sistema donde nada quede librado al azar, donde una simple coma pueda arruinar mi proyecto entonces me enfoque en crear un carpeta 00 - DATA, ahi guardo los los dataset originales de formato zip en donde de ahi empieza todo la Limpieza
+La exploracion de datos tuve que desarrolar un sistema donde nada quede librado al azar, donde una simple coma pueda arruinar mi proyecto entonces me enfoque en crear un sistema jerarguico en donde
+cada paso que hiba a avanzando y tenia que retroceder para corregir algo, no perdia el camino 
+recorrido solo vastaria ir a jupiter en donde tenia que hacer la correcion ejecutaba el cambio y se 
+me hiban modificando los archivos consecuentes sin alterar todo lo hecho en el camino.-
+
+
+Comence creando la carpeta    00 - DATA, ahi guardo los dataset originales de formato zip en donde de ahi empieza todo la limpieza.-
 
 A continuacion cree la carpeta 01 - ETL en donde tambien hice sub-carpetas en donde hice en forma secuencial todo el ETL:
 
@@ -114,7 +120,8 @@ A continuacion cree la carpeta 01 - ETL en donde tambien hice sub-carpetas en do
 
 ## Diccionario de datos
 
-Haber separado los datos en diferentes conjuntos y crear diccionarios de datos para cada uno de ellos ha sido una decisión clave en mi proyecto individual de Ciencia de Datos. Esta estructura organizativa me ha brindado una serie de beneficios importantes.
+
+Haber separado los datos en el ETL en diferentes conjuntos y crear diccionarios de datos para cada uno de ellos ha sido una decisión clave en mi proyecto individual de Ciencia de Datos. Esta estructura organizativa me ha brindado una serie de beneficios importantes.
 
 
 A continuación se muestra un diccionario que describe cada columna en el conjunto de datos del archivo data_final.csv:
@@ -188,7 +195,7 @@ column_description = {
 
 ## s---------------------------------------------------------------------------------------------------------------
 
-## Análisis Exploratorio de Datos (EDA)
+## Análisis Exploratorio de Datos (EDA) Carpeta 02 - EDA
 
 Después de completar las tareas de limpieza de datos, realicé un análisis exploratorio exhaustivo utilizando técnicas estadísticas y visualizaciones. El archivo donde se llevó a cabo este análisis se encuentra en la carpeta "data_a_explorar", en un notebook que contiene las gráficas de exploración.
 
@@ -200,9 +207,33 @@ Además, realicé diversas visualizaciones para explorar la distribución de pel
 
 Este análisis exploratorio de datos fue fundamental para obtener conocimientos valiosos que nos ayudaron a comprender mejor el conjunto de datos y a tomar decisiones informadas en etapas posteriores del proyecto. Nos permitió descubrir patrones, identificar outliers y obtener una comprensión más profunda de las características de las películas y su éxito financiero.
 
+# Funciones
+
+## Desarrollo de Funciones (DEF) carpeta 03 - DEF
+
+
+Deben crear 6 funciones para los endpoints que se consumirán en la API, recuerden que deben tener un decorador por cada una .
+
+def peliculas_idioma( Idioma: str ): Se ingresa un idioma (como están escritos en el dataset, no hay que traducirlos!). Debe devolver la cantidad de películas producidas en ese idioma.
+                    Ejemplo de retorno: X cantidad de películas fueron estrenadas en idioma
+
+def peliculas_duracion( Pelicula: str ): Se ingresa una pelicula. Debe devolver la duracion y el año.
+                    Ejemplo de retorno: X . Duración: x. Año: xx
+
+def franquicia( Franquicia: str ): Se ingresa la franquicia, retornando la cantidad de peliculas, ganancia total y promedio
+                    Ejemplo de retorno: La franquicia X posee X peliculas, una ganancia total de x y una ganancia promedio de xx
+
+def peliculas_pais( Pais: str ): Se ingresa un país (como están escritos en el dataset, no hay que traducirlos!), retornando la cantidad de peliculas producidas en el mismo.
+                    Ejemplo de retorno: Se produjeron X películas en el país X
+
+def productoras_exitosas( Productora: str ): Se ingresa la productora, entregandote el revunue total y la cantidad de peliculas que realizo.
+                    Ejemplo de retorno: La productora X ha tenido un revenue de x
+
+def get_director( nombre_director ): Se ingresa el nombre de un director que se encuentre dentro de un dataset debiendo devolver el éxito del mismo medido a través del retorno. Además, deberá devolver el nombre de cada película con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
+
 # Sistema de Recomendación
 
-## Desarrollo de Modelos de Machine Learning
+## Desarrollo de Modelos de Machine Learning (ML) carpeta 04 - ML
 
 
 Para el desarrollo del sistema de recomendación utile es elmétodo de los k vecinos más cercanos 
