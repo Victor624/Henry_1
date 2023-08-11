@@ -294,6 +294,6 @@ Una vez que el archivo `requirements.txt` está correctamente configurado, Rende
 
 <a href="https://trabajo-vargas-victor.onrender.com/docs#" target="_blank">Mi Aplicacion</a>
 
-<a href="https://trabajo-vargas-victor.onrender.com/" target="_blank">Mi Aplicacion</a>
+<a href="https://www.youtube.com/watch?v=4DdpCiS_1Mk" target="_blank">Mi video</a>
 
 
