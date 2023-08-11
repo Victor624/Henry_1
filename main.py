@@ -224,11 +224,11 @@ def directores(x: str):
     """
      Esta Funcion devuelve las peliculas hizo el Director en orden de las que mas Ganancia dejo:\n
      estos son algunos de los datos que pueden investigar:\n
-    'John Lasseter'\n
-    'Joe Johnston'\n
-    'Howard Deutch'\n
-    'Forest Whitaker'\n
-    'Charles Shyer\n
+    Laurent Tirard\n
+    Paul Wendkos\n
+    David Lowery\n
+    Lewis Seiler\n
+    Matthew Barney\n
 
     """  
     Direct = df['Director']
@@ -239,7 +239,7 @@ def directores(x: str):
         i = str(i)
         posi += 1
         if x in i:           
-            title = df[["title", "release_year", "revenue", "Return"]]
+            title = df[["title", "release_date", "revenue", "Return"]]
             title = pd.DataFrame(title)
             title = title.loc[posi]
             titl.append(title)
