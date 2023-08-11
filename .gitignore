@@ -4,3 +4,14 @@ Data_Completa
 movies_dataset
 desa_credits
 01 - ETL/06 - Dataset Para Funciones y EDA/Data_Final.csv
+00 - DATA/credits.csv
+00 - DATA/01 - Credit_Desanidado.rar
+01 - ETL/01 - Fraccionando Daframe/credits.csv
+01 - ETL/01 - Fraccionando Daframe/movies_dataset.csv
+01 - ETL/02 - Desanidado de Columnas/frac_credits.csv
+01 - ETL/02 - Desanidado de Columnas/frac_movie.csv
+01 - ETL/03 - Armado el Completo/Credit_desani.csv
+01 - ETL/03 - Armado el Completo/Movie_desani.csv
+01 - ETL/04 - Tratamientos de Datos Nulos/Data_Preprocesado.csv
+01 - ETL/06 - Dataset Para Funciones y EDA/Funcio.csv
+01 - ETL/06 - Dataset Para Funciones y EDA/Machine.csv
